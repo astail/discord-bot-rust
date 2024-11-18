@@ -1,3 +1,4 @@
+use dotenv::dotenv;
 use std::env;
 use serenity::{
     async_trait,
@@ -26,6 +27,9 @@ impl EventHandler for Handler {
 
 #[tokio::main]
 async fn main() {
+    // .envファイルの読み込み
+    dotenv().ok();
+
     // 環境変数DISCORD_TOKENからトークンを取得
     let token = env::var("DISCORD_TOKEN_RUST").expect("トークンが設定されていません");
 
