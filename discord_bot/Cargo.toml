@@ -4,3 +4,5 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+serenity = { version = "0.11", features = ["client", "gateway"] }
+tokio = { version = "1", features = ["full"] }
